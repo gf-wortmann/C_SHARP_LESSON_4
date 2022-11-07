@@ -17,7 +17,7 @@ int N, P;
 Console.Clear();
 Console.WriteLine("Введите целое число");
 N = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите цнлочисленный показатель степени");
+Console.WriteLine("Введите целочисленный показатель степени");
 P = int.Parse(Console.ReadLine()!);
 Console.WriteLine($"{N} в степени {P} = {Pow(N, P)}");
 
