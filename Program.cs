@@ -1,17 +1,17 @@
-﻿//задача 26 выдает количество цифр в числе
+﻿//задача 28 выдает произведение чисел от 1 до N
 //
-int GetRange(int a)
+int GetProduct(int a)
 {
-    int i = 0;
-    while(a>1)
+    int p = 1, i = 1;
+    while( a > i )
     {
-        a /= 10;
+        p *= i;
         i++;
-        Console.WriteLine($"{a}: {i}");
+        Console.WriteLine($"{i}: {p}");
     }
-    return i;
+    return p;
 }
 
 Console.Clear();
-int A = int.Parse(Console.ReadLine()!);
-Console.WriteLine(GetRange(A));
+int N = int.Parse(Console.ReadLine()!);
+Console.WriteLine(GetProduct(N));
