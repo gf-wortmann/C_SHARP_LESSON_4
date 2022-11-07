@@ -2,12 +2,12 @@
 //
 int GetProduct(int a)
 {
-    int p = 1, i = 1;
-    while( a > i )
+    int p = 1;
+    while( a > 1 )
     {
-        p *= i;
-        i++;
-        Console.WriteLine($"{i}: {p}");
+        p *= a;
+        a--;
+        Console.WriteLine($"{a}: {p}");
     }
     return p;
 }
