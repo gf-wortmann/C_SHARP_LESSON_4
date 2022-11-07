@@ -1,23 +1,24 @@
-﻿//задача 30 заполняет массив из 8 элементов with 0 and 1
+﻿//Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+//3, 5 -> 243 (3⁵)
+//2, 4 -> 16
 //
-int[] FillArray(int[] a)
+long Pow(int n, int p)
 {
-    Random rnd = new Random();
-    for (int i = 0; i < a.Length; i++)
+    long res=n;
+    for (int i = 1; i < p; i++)
     {
-        a[i] = rnd.Next(0, 2);
+        res *= n;
     }
-    return a;
+    return res;
 }
 
-int[] A = new int[8]; 
-FillArray(A);
+int N, P;
+
 Console.Clear();
+Console.WriteLine("Введите целое число");
+N = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите цнлочисленный показатель степени");
+P = int.Parse(Console.ReadLine()!);
+Console.WriteLine($"{N} в степени {P} = {Pow(N, P)}");
 
-//for (int i = 0; i < A.Length; i++)
-//{
-    //Console.Write($" {A[i]} ");
-//}
-
-//Console.WriteLine(" ");
-Console.Write(String.Join(", ", A));
+//Console.Write(String.Join(", ", A));
