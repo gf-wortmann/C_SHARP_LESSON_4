@@ -1,4 +1,4 @@
-﻿//задача  заполняет массив из 8 элементов with 0 and 1
+﻿//задача 30 заполняет массив из 8 элементов with 0 and 1
 //
 int[] FillArray(int[] a)
 {
@@ -11,10 +11,13 @@ int[] FillArray(int[] a)
 }
 
 int[] A = new int[8]; 
-A = FillArray(A);
+FillArray(A);
 Console.Clear();
-//int N = int.Parse(Console.ReadLine()!);
-for (int i = 0; i < A.Length; i++)
-{
-    Console.Write($" {A[i]} ");
-}
+
+//for (int i = 0; i < A.Length; i++)
+//{
+    //Console.Write($" {A[i]} ");
+//}
+
+//Console.WriteLine(" ");
+Console.Write(String.Join(", ", A));
