@@ -3,12 +3,7 @@
 int GetProduct(int a)
 {
     int p = 1;
-    while( a > 1 )
-    {
-        p *= a;
-        a--;
-        Console.WriteLine($"{a}: {p}");
-    }
+    for ( int i = 1; i < a; i++) p *= i;
     return p;
 }
 
