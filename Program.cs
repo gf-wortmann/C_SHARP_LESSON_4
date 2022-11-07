@@ -1,12 +1,20 @@
-﻿//задача 28 выдает произведение чисел от 1 до N
+﻿//задача  заполняет массив из 8 элементов with 0 and 1
 //
-int GetProduct(int a)
+int[] FillArray(int[] a)
 {
-    int p = 1;
-    for ( int i = 1; i < a; i++) p *= i;
-    return p;
+    Random rnd = new Random();
+    for (int i = 0; i < a.Length; i++)
+    {
+        a[i] = rnd.Next(0, 2);
+    }
+    return a;
 }
 
+int[] A = new int[8]; 
+A = FillArray(A);
 Console.Clear();
-int N = int.Parse(Console.ReadLine()!);
-Console.WriteLine(GetProduct(N));
+//int N = int.Parse(Console.ReadLine()!);
+for (int i = 0; i < A.Length; i++)
+{
+    Console.Write($" {A[i]} ");
+}
