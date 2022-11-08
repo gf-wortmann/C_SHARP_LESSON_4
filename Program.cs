@@ -1,23 +1,20 @@
-﻿//Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
-//452 -> 11
-//82 -> 10
-//9012 -> 12
+﻿//ЗЗадача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 //
-int DigitSum(int n)
+//1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+//
+//6, 1, 33 -> [6, 1, 33]
+//
+int[] GetArray(int n)
 {
-    int divisor = 1, accumulator=0, reminder = n;
-    while (n / divisor > 0)
+    int[] a = new int[n];
+    for (int i = 0; i < n; i++)
     {
-        reminder = n % (divisor * 10) / divisor;
-        accumulator += reminder;
-        divisor *= 10;
+        Console.WriteLine($"Введште целое число №{i+1} из 8");
+        a[i] = int.Parse(Console.ReadLine()!);
     }
-    return accumulator;
+    return a;
 }
-int N;
-Console.Clear();
-Console.WriteLine("Введите целое число");
-N = int.Parse(Console.ReadLine()!);
-Console.WriteLine($"Sum of digits = {DigitSum(N)}");
 
-//Console.Write(String.Join(",", a));
+int N = 8;
+Console.Clear();
+Console.Write(String.Join(", ", GetArray(N)));
