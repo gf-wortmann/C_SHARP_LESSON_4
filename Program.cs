@@ -1,20 +1,20 @@
-﻿//ЗЗадача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+﻿//Задача “со звездочкой”: Напишите функцию, которая принимает одно число - высоту елочки и рисует ее в консоли звездочками.
 //
-//1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
-//
-//6, 1, 33 -> [6, 1, 33]
-//
-int[] GetArray(int n)
+void DrawFir(int n)
 {
-    int[] a = new int[n];
+    char[] a = new char[2 * n - 1];
+    int centerindex = n - 1; 
     for (int i = 0; i < n; i++)
     {
-        Console.WriteLine($"Введште целое число №{i+1} из 8");
-        a[i] = int.Parse(Console.ReadLine()!);
+        for (int j = 0; j < n-i; j++){ a[j] = ' ';}
+        for (int j = 0; j <= i; j++){ a[centerindex + j] = a[centerindex-j] = '*';}
+        Console.WriteLine(String.Join("", a));
     }
-    return a;
 }
 
 int N = 8;
 Console.Clear();
-Console.Write(String.Join(", ", GetArray(N)));
+Console.WriteLine("Введите высоту ёлочки");
+N = int.Parse(Console.ReadLine()!);
+if (N > 40){Console.WriteLine($"Многовато, максимальная высоте = 40"); return;}
+DrawFir(N);
