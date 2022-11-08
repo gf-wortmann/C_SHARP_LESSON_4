@@ -1,24 +1,24 @@
-﻿//Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
-//3, 5 -> 243 (3⁵)
-//2, 4 -> 16
+﻿//Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+//452 -> 11
+//82 -> 10
+//9012 -> 12
 //
-long Pow(int n, int p)
+int DigitSum(int n)
 {
-    long res=n;
-    for (int i = 1; i < p; i++)
+    int divisor = 1, accumulator=0, reminder = n;
+    while (n / divisor > 0)
     {
-        res *= n;
+        reminder = n % (divisor * 10) / divisor;
+        accumulator += reminder;
+        divisor *= 10;
     }
-    return res;
+    return accumulator;
 }
-
-int N, P;
-
+int N;
 Console.Clear();
 Console.WriteLine("Введите целое число");
 N = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите целочисленный показатель степени");
-P = int.Parse(Console.ReadLine()!);
-Console.WriteLine($"{N} в степени {P} = {Pow(N, P)}");
+Console.WriteLine($"Sum of digits = {DigitSum(N)}");
+
 
 //Console.Write(String.Join(", ", A));
