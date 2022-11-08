@@ -20,5 +20,4 @@ Console.WriteLine("Введите целое число");
 N = int.Parse(Console.ReadLine()!);
 Console.WriteLine($"Sum of digits = {DigitSum(N)}");
 
-
-//Console.Write(String.Join(", ", A));
+//Console.Write(String.Join(",", a));
